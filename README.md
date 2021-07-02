@@ -15,7 +15,7 @@ The percentage scores are normalized according to the predicted values. The y ax
 We have stored all data using [git lfs](https://git-lfs.github.com/). Downloading this repository as a `.zip` file **will not work**. Make sure you have `git lfs` installed on your system and clone the repository using `git clone` instead.
 
 ## Downloading the models
-You can download the model in a ready to use ONNX format from the [/saved_models](https://github.com/microsoft/onnxruntime/tree/master/js/web) folder. Refer to the [Moody web application source code](https://github.com/COINS-SS21/moody) to learn how to use them in JavaScript with the [onnxruntime-web](https://github.com/microsoft/onnxruntime/tree/master/js/web) package.
+You can download the model in a ready to use ONNX format from the [saved_models](/saved_models) folder. Refer to the [Moody web application source code](https://github.com/COINS-SS21/moody) to learn how to use them in JavaScript with the [onnxruntime-web](https://github.com/microsoft/onnxruntime/tree/master/js/web) package.
 
 ## AlexNet (tuned) architecture
 ```
