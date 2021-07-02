@@ -1,7 +1,7 @@
 # Moody speech emotion recognition (SER) models
 Speech emotion recognition models for the [Moody web application](https://github.com/COINS-SS21/moody). The models are developed in PyTorch. We propse two architectures: A tuned AlexNet with Dropout and BatchNormalization layers and a ResNet18 architecture.
 
-We extract sound features with mel-spectrograms and an own implementation of the Short-Time-Fourier-Transform with a neural network with Conv2d layers. This way we can port the feature extraction to ONNX (with support for `onnxruntime-web`). The main benefit of this is that the feature extraction is completely consistent across runtimes because the calculations for creating the mel-spectrograms do not have to be reimplemented in each programming language where the models want to be used.
+We extract sound features with mel-spectrograms and an own implementation of the Short-Time-Fourier-Transform with a neural network with Conv2d layers. This way we can port the feature extraction to ONNX (with support for [onnxruntime-web](https://github.com/microsoft/onnxruntime/tree/master/js/web)). The main benefit of this is that the feature extraction is completely consistent across runtimes because the calculations for creating the mel-spectrograms do not have to be reimplemented in each programming language where the models want to be used.
 
 The models accept as input the sound waveform as a 1-d float32 array of length 46305. This equals a duration of 2.1 seconds and a sample rate of 22050.
 
@@ -15,7 +15,7 @@ The percentage scores are normalized according to the predicted values. The y ax
 We have stored all data using [git lfs](https://git-lfs.github.com/). Downloading this repository as a `.zip` file **will not work**. Make sure you have `git lfs` installed on your system and clone the repository using `git clone` instead.
 
 ## Downloading the models
-You can download the model in a ready to use ONNX format from the `saved_models/` folder. Refer to the [Moody web application source code](https://github.com/COINS-SS21/moody) to learn how to use them in JavaScript with the `onnxruntime-web` package.
+You can download the model in a ready to use ONNX format from the [/saved_models](https://github.com/microsoft/onnxruntime/tree/master/js/web) folder. Refer to the [Moody web application source code](https://github.com/COINS-SS21/moody) to learn how to use them in JavaScript with the [onnxruntime-web](https://github.com/microsoft/onnxruntime/tree/master/js/web) package.
 
 ## AlexNet (tuned) architecture
 ```
