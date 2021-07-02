@@ -8,8 +8,20 @@ The models accept as input the sound waveform as a 1-d float32 array of length 4
 ## Model accuracy
 The follwing plots show the accuracy of the final models. Please note that the values refer to the accuracy after early stopping (red line) and not to the best accuracy (green line). We use early stopping to avoid overfitting especially because we only have a limited amount of data and because the actors in our validation set are the same as in our training set.
 
+### AlexNet (tuned)
+![](/docs/AlexNet_Accuracy.png)
+
+### ResNet18
+![](/docs/ResNet18_Accuracy.png)
+
 ## Confusion matrix
 The percentage scores are normalized according to the predicted values. The y axis shows the predicted labels and the x axis shows the true labels.
+
+### AlexNet (tuned)
+![](/docs/AlexNet_Confusion_Matrix.png)
+
+### ResNet18
+![](/docs/Resnet18_Confusion_Matrix.png)
 
 ## Accessing the data
 We have stored all data using [git lfs](https://git-lfs.github.com/). Downloading this repository as a `.zip` file **will not work**. Make sure you have `git lfs` installed on your system and clone the repository using `git clone` instead.
