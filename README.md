@@ -3,7 +3,7 @@ Speech emotion recognition models for the [Moody web application](https://github
 
 We extract sound features with mel-spectrograms and an own implementation of the Short-Time-Fourier-Transform with a neural network with Conv2d layers. This way we can port the feature extraction to ONNX (with support for [onnxruntime-web](https://github.com/microsoft/onnxruntime/tree/master/js/web)). The main benefit of this is that the feature extraction is completely consistent across runtimes because the calculations for creating the mel-spectrograms do not have to be reimplemented in each programming language where the models want to be used.
 
-The models accept as input the sound waveform as a 1-d float32 array of length 46305. This equals a duration of 2.1 seconds and a sample rate of 22050.
+The models accept as input the RMS normalized sound waveform as a 1-d float32 array of length 46305. This equals a duration of 2.1 seconds and a sample rate of 22050. The Moody web app's implementation of RMS normalization can be found [here](https://github.com/COINS-SS21/moody/blob/6745cfef7bf9e161868063dd7a7262fcbfefb341/src/utils.ts#L68-L77).
 
 ## Model accuracy
 The follwing plots show the accuracy of the final models. Please note that the values refer to the accuracy after early stopping (red line) and not to the best accuracy (green line). We use early stopping to avoid overfitting especially because we only have a limited amount of data and because the actors in our validation set are the same as in our training set.
